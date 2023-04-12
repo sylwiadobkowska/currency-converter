@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form js-form">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kantor walut</legend>
+                <p>
+                    Pola oznaczone * są obowiązkowe.
+                </p>
+                <p>
+                    <label><span class="form__label">
+                            Waluta: *</span> <select id="currency" name="currency" class="form__data js-currency">
+                            <option value="">nie wybrano</option>
+                            <option value="EUR">EUR</option>
+                            <option value="USD">USD</option>
+                            <option value="AUD">AUD</option>
+                            <option value="CHF">CHF</option>
+                            <option value="NOK">NOK</option>
+                            <option value="CZK">CZK</option>
+                            <option value="JPY">JPY</option>
+                            <option value="SEK">SEK</option>
+                            <option value="w wybranej walucie">inna</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <span class="form__label">
+                            Kwota w PLN: *</span> <input type="number" name="ammount" class="form__data js-ammount"
+                            step="0.01" required min="0.01">
+                    </label>
+                </p>
+
+
+            </fieldset>
+            <p>
+                <button class="form__button">Policz!</button>
+            </p>
+            <p id="submit" class="submit js-submit">
+                <span class="js-submit__ammount submit__ammount"></span> PLN jest równe <strong
+                    class="js-result"></strong> <span id="submitCurrency" class="js-submit__currency"></span>.
+            </p>
+        </form>
+    </div>
+</body>
