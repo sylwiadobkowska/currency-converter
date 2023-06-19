@@ -8,4 +8,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background-image: url("https://cdn.pixabay.com/photo/2023/01/15/22/55/fern-7721323_1280.jpg");
+    background-size: cover;
+    
 }
