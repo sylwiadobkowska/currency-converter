@@ -1,6 +1,6 @@
 ﻿# Currency Converter
  ## About project
- This project is a simple currency converter which allows you to quickly convert polish zlotys to other currencies based on exchange rate manually established in the code. It was made as a homework quest for the frontend developer course I am currently doing. 
+ This project is a simple currency converter which allows you to quickly convert polish zlotys to other currencies based on exchange rate manually established in the code. It was made as a homework quest for the frontend developer course I am currently doing. The website can be found in the following link: https://sylwiadobkowska.github.io/currency-converter/
  
 ## Currencies available
 Right now there are following currencies to choose from:
