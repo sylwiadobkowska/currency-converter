@@ -1,6 +1,7 @@
 ﻿# Currency Converter
  ## About project
- This project is a simple currency converter which allows you to quickly calculate polish zlotys value in other currencies based on exchange rate manually established in the code. It was made as a homework quest for the frontend developer course I am currently doing. 
+ This project is a simple currency converter which allows you to quickly convert polish zlotys to other currencies based on exchange rate manually established in the code. It was made as a homework quest for the frontend developer course I am currently doing. 
+ 
 ## Currencies available
 Right now there are following currencies to choose from:
 - Euro (EUR)
@@ -13,4 +14,13 @@ Right now there are following currencies to choose from:
 - Swedish Krona (SEK)
 
 ## Technologies
-The projest was created using JavaScript.
+The projest was created using following technologies:
+- JavaScript
+- HTML
+- CSS
+
+## Files
+This repository consists of following files:
+- `index.html` : Main HTML file for the Currency Converter website.
+- `script.js` : JS file responsible for the calculating interaction.
+- `style.css`, `container.css`, `form.css` : Files containing styling of the form.
