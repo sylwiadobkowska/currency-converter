@@ -1,52 +1,49 @@
-let formElement = document.querySelector(".js-form");
-let ammountElement = document.querySelector(".js-ammount");
-let resultElement = document.querySelector(".js-result");
-let submitElement = document.querySelector(".js-submit");
+{
+    const formElement = document.querySelector(".js-form");
+    const amountElement = document.querySelector(".js-amount");
+    const submitElement = document.querySelector(".js-submit");
+    const currencyElement = document.querySelector(".js-currency");
 
-
-submitElement.style.display = "none";
-
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let currencyElement = document.querySelector(".js-currency");
-    let submitCurrencyElement = document.querySelector(".js-submit__currency");
-    let submitAmmountElement = document.querySelector(".js-submit__ammount");
-    let ammount = ammountElement.value;
     let exchangeRate;
 
-    submitCurrencyElement.innerText = currencyElement.value;
+    const convertCurrency = (amount, currency) => {
+        switch (currency) {
+            case "EUR":
+                exchangeRate = 4.7;
+                return amount / exchangeRate;
+            case "USD":
+                exchangeRate = 4.33;
+                return amount / exchangeRate;
+            case "AUD":
+                exchangeRate = 3.02;
+                return amount / exchangeRate;
+            case "CHF":
+                exchangeRate = 4.69;
+                return amount / exchangeRate;
+            case "NOK":
+                exchangeRate = 0.43;
+                return amount / exchangeRate;
+            case "CZK":
+                exchangeRate = 0.2;
+                return amount / exchangeRate;
+            case "JPY":
+                exchangeRate = 0.033;
+                return amount / exchangeRate;
+            case "SEK":
+                exchangeRate = 0.41;
+                return amount / exchangeRate;
+        }
+    };
 
-    switch (submitCurrencyElement.innerText) {
-        case "EUR":
-            exchangeRate = 4.7;
-            break;
-        case "USD":
-            exchangeRate = 4.33;
-            break;
-        case "AUD":
-            exchangeRate = 3.02;
-            break;
-        case "CHF":
-            exchangeRate = 4.69;
-            break;
-        case "NOK":
-            exchangeRate = 0.43;
-            break;
-        case "CZK":
-            exchangeRate = 0.2;
-            break;
-        case "JPY":
-            exchangeRate = 0.033;
-            break;
-        case "SEK":
-            exchangeRate = 0.41;
-    }
+    formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    let result = ammount / exchangeRate;
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
 
-    submitAmmountElement.innerText = ammountElement.value;
-    resultElement.innerText = result.toFixed(2);
+        const result = convertCurrency(amount, currency);
+        submitElement.innerHTML = `${amount.toFixed(2)} PLN jest równe <strong>${result.toFixed(2)} ${currency}.`;
+    });
+};
 
-    submitElement.style.display = "block";
-});
 
