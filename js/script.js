@@ -1,12 +1,7 @@
 {
-    const formElement = document.querySelector(".js-form");
-    const amountElement = document.querySelector(".js-amount");
-    const submitElement = document.querySelector(".js-submit");
-    const currencyElement = document.querySelector(".js-currency");
-
-    let exchangeRate;
-
     const convertCurrency = (amount, currency) => {
+        let exchangeRate;
+
         switch (currency) {
             case "EUR":
                 exchangeRate = 4.7;
@@ -35,15 +30,25 @@
         }
     };
 
-    formElement.addEventListener("submit", (event) => {
-        event.preventDefault();
+    const onFormSubmit = () => {
+        const formElement = document.querySelector(".js-form");
+        const amountElement = document.querySelector(".js-amount");
+        const submitElement = document.querySelector(".js-submit");
+        const currencyElement = document.querySelector(".js-currency");
 
-        const amount = +amountElement.value;
-        const currency = currencyElement.value;
+        formElement.addEventListener("submit", (event) => {
+            event.preventDefault();
 
-        const result = convertCurrency(amount, currency);
-        submitElement.innerHTML = `${amount.toFixed(2)} PLN jest równe <strong>${result.toFixed(2)} ${currency}.`;
-    });
+            const amount = +amountElement.value;
+            const currency = currencyElement.value;
+
+            const result = convertCurrency(amount, currency);
+            submitElement.innerHTML = `${amount.toFixed(2)} PLN jest równe <strong>${result.toFixed(2)} ${currency}.`;
+        });
+    }
+    
+    onFormSubmit();
+
 };
 
 
