@@ -46,9 +46,14 @@
             submitElement.innerHTML = `${amount.toFixed(2)} PLN jest równe <strong>${result.toFixed(2)} ${currency}.`;
         });
     }
-    
-    onFormSubmit();
 
+    const init = () => {
+    onFormSubmit();
+    convertCurrency();
+    }
+
+    init();
+    
 };
 
 
